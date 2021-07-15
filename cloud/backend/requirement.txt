@@ -1,0 +1,8 @@
+tensorflow
+flask
+gcsfs
+h5py
+numpy
+scikit-learn
+pandas
+mysql-connector-python

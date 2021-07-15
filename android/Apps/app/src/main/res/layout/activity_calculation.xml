@@ -1,0 +1,684 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.prediction_calc.CalculationActivity"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="50dp">
+
+        <View
+            android:id="@+id/view_dg"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@color/dark_green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toStartOf="@+id/view_dg"
+            app:layout_constraintTop_toTopOf="@+id/view_dg"
+            app:layout_constraintBottom_toBottomOf="@+id/view_dg"/>
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/logo"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toEndOf="@+id/btn_back"
+            app:layout_constraintTop_toTopOf="@+id/view_dg"
+            app:layout_constraintBottom_toBottomOf="@+id/view_dg"/>
+
+        <TextView
+            android:id="@+id/provinsi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/provinsi"
+            android:textSize="18sp"
+            android:textColor="@color/light_green"
+            android:fontFamily="@font/oswald_med"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toEndOf="@+id/logo"
+            app:layout_constraintTop_toTopOf="@+id/logo"
+            app:layout_constraintBottom_toTopOf="@+id/komoditas"/>
+
+        <TextView
+            android:id="@+id/komoditas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/komoditas"
+            android:textSize="18sp"
+            android:textColor="@color/light_green"
+            android:fontFamily="@font/oswald_med"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toEndOf="@+id/logo"
+            app:layout_constraintTop_toBottomOf="@+id/provinsi"
+            app:layout_constraintBottom_toBottomOf="@+id/logo"/>
+
+        <!-- input1 -->
+        <TextView
+            android:id="@+id/input1_cap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/input1_hint"
+            style="@style/input_cap"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_dg"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input1_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/input_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input1_cap">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="@style/input"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/input1_size"
+            style="@style/input_size"
+            app:layout_constraintStart_toEndOf="@+id/input1_layout"
+            app:layout_constraintTop_toTopOf="@+id/input1_layout"
+            app:layout_constraintBottom_toBottomOf="@id/input1_layout"/>
+
+        <!-- input2 -->
+        <TextView
+            android:id="@+id/input2_cap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/input2_hint"
+            style="@style/input_cap"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input1_layout"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input2_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/input_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input2_cap">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="@style/input"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/input2_size"
+            style="@style/input_size"
+            app:layout_constraintStart_toEndOf="@+id/input2_layout"
+            app:layout_constraintTop_toTopOf="@+id/input2_layout"
+            app:layout_constraintBottom_toBottomOf="@id/input2_layout"/>
+
+        <!-- input3 -->
+        <TextView
+            android:id="@+id/input3_cap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/input3_hint"
+            style="@style/input_cap"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input2_layout"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input3_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/input_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input3_cap">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="@style/input"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/input3_size"
+            style="@style/input_size"
+            app:layout_constraintStart_toEndOf="@+id/input3_layout"
+            app:layout_constraintTop_toTopOf="@+id/input3_layout"
+            app:layout_constraintBottom_toBottomOf="@id/input3_layout"/>
+
+        <!-- input4 -->
+        <TextView
+            android:id="@+id/input4_cap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/input4_hint"
+            style="@style/input_cap"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input3_layout"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input4_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/input_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input4_cap">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="@style/input"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/input4_size"
+            style="@style/input_size"
+            app:layout_constraintStart_toEndOf="@+id/input4_layout"
+            app:layout_constraintTop_toTopOf="@+id/input4_layout"
+            app:layout_constraintBottom_toBottomOf="@id/input4_layout"/>
+
+        <!-- input5 -->
+        <TextView
+            android:id="@+id/input5_cap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/input5_hint"
+            style="@style/input_cap"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input4_layout"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input5_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/input_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input5_cap">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="@style/input"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/input5_size"
+            style="@style/input_size"
+            app:layout_constraintStart_toEndOf="@+id/input5_layout"
+            app:layout_constraintTop_toTopOf="@+id/input5_layout"
+            app:layout_constraintBottom_toBottomOf="@id/input5_layout"/>
+
+        <!-- input6 -->
+        <TextView
+            android:id="@+id/input6_cap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/input6_hint"
+            style="@style/input_cap"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input5_layout"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input6_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/input_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input6_cap">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="@style/input"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/input6_size"
+            style="@style/input_size"
+            app:layout_constraintStart_toEndOf="@+id/input6_layout"
+            app:layout_constraintTop_toTopOf="@+id/input6_layout"
+            app:layout_constraintBottom_toBottomOf="@id/input6_layout"/>
+
+        <!-- input7 -->
+        <TextView
+            android:id="@+id/input7_cap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/input7_hint"
+            style="@style/input_cap"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input6_layout"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input7_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/input_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input7_cap">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="@style/input"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/input7_size"
+            style="@style/input_size"
+            app:layout_constraintStart_toEndOf="@+id/input7_layout"
+            app:layout_constraintTop_toTopOf="@+id/input7_layout"
+            app:layout_constraintBottom_toBottomOf="@id/input7_layout"/>
+
+        <!-- input8 -->
+        <TextView
+            android:id="@+id/input8_cap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/input8_hint"
+            style="@style/input_cap"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input7_layout"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input8_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/input_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input8_cap">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="@style/input"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/input8_size"
+            style="@style/input_size"
+            app:layout_constraintStart_toEndOf="@+id/input8_layout"
+            app:layout_constraintTop_toTopOf="@+id/input8_layout"
+            app:layout_constraintBottom_toBottomOf="@id/input8_layout"/>
+
+        <!-- input9 -->
+        <TextView
+            android:id="@+id/input9_cap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/input9_hint"
+            style="@style/input_cap"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input8_layout"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input9_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/input_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input9_cap">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input9"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="@style/input"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/input9_size"
+            style="@style/input_size"
+            app:layout_constraintStart_toEndOf="@+id/input9_layout"
+            app:layout_constraintTop_toTopOf="@+id/input9_layout"
+            app:layout_constraintBottom_toBottomOf="@id/input9_layout"/>
+
+        <!-- input10 -->
+        <TextView
+            android:id="@+id/input10_cap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/input10_hint"
+            style="@style/input_cap"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input9_layout"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input10_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/input_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input10_cap">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input10"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="@style/input"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/input10_size"
+            style="@style/input_size"
+            app:layout_constraintStart_toEndOf="@+id/input10_layout"
+            app:layout_constraintTop_toTopOf="@+id/input10_layout"
+            app:layout_constraintBottom_toBottomOf="@id/input10_layout"/>
+
+        <!-- input11 -->
+        <TextView
+            android:id="@+id/input11_cap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/input11_hint"
+            style="@style/input_cap"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input10_layout"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input11_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/input_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input11_cap">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input11"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="@style/input"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/input11_size"
+            style="@style/input_size"
+            app:layout_constraintStart_toEndOf="@+id/input11_layout"
+            app:layout_constraintTop_toTopOf="@+id/input11_layout"
+            app:layout_constraintBottom_toBottomOf="@id/input11_layout"/>
+
+        <!-- input12 -->
+        <TextView
+            android:id="@+id/input12_cap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/input12_hint"
+            style="@style/input_cap"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input11_layout"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input12_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/input_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input12_cap">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input12"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="@style/input"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/input12_size"
+            style="@style/input_size"
+            app:layout_constraintStart_toEndOf="@+id/input12_layout"
+            app:layout_constraintTop_toTopOf="@+id/input12_layout"
+            app:layout_constraintBottom_toBottomOf="@id/input12_layout"/>
+
+        <!-- input13 -->
+        <TextView
+            android:id="@+id/input13_cap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/input13_hint"
+            style="@style/input_cap"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input12_layout"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input13_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/input_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input13_cap">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input13"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="@style/input"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/input13_size"
+            style="@style/input_size"
+            app:layout_constraintStart_toEndOf="@+id/input13_layout"
+            app:layout_constraintTop_toTopOf="@+id/input13_layout"
+            app:layout_constraintBottom_toBottomOf="@id/input13_layout"/>
+
+        <!-- input14 -->
+        <TextView
+            android:id="@+id/input14_cap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/input14_hint"
+            style="@style/input_cap"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input13_layout"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input14_layout"
+            style="@style/input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input14_cap">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input14"
+                style="@style/input"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/input14_size"
+            style="@style/input_size"
+            app:layout_constraintStart_toEndOf="@+id/input14_layout"
+            app:layout_constraintTop_toTopOf="@+id/input14_layout"
+            app:layout_constraintBottom_toBottomOf="@id/input14_layout"/>
+
+        <!-- input15 -->
+        <TextView
+            android:id="@+id/input15_cap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/input15_hint"
+            style="@style/input_cap"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input14_layout"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input15_layout"
+            style="@style/input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input15_cap">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input15"
+                style="@style/input"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/input15_size"
+            style="@style/input_size"
+            app:layout_constraintStart_toEndOf="@+id/input15_layout"
+            app:layout_constraintTop_toTopOf="@+id/input15_layout"
+            app:layout_constraintBottom_toBottomOf="@id/input15_layout"/>
+
+        <!-- input16 -->
+        <TextView
+            android:id="@+id/input16_cap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/input16_hint"
+            style="@style/input_cap"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input15_layout"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input16_layout"
+            style="@style/input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input16_cap">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input16"
+                style="@style/input"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/input16_size"
+            style="@style/input_size"
+            app:layout_constraintStart_toEndOf="@+id/input16_layout"
+            app:layout_constraintTop_toTopOf="@+id/input16_layout"
+            app:layout_constraintBottom_toBottomOf="@id/input16_layout"/>
+
+        <!-- input17 -->
+        <TextView
+            android:id="@+id/input17_cap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/input17_hint"
+            style="@style/input_cap"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input16_layout"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input17_layout"
+            style="@style/input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input17_cap">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input17"
+                style="@style/input"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/input17_size"
+            style="@style/input_size"
+            app:layout_constraintStart_toEndOf="@+id/input17_layout"
+            app:layout_constraintTop_toTopOf="@+id/input17_layout"
+            app:layout_constraintBottom_toBottomOf="@id/input17_layout"/>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_calc"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="@string/hitung"
+            android:textColor="@color/white"
+            android:fontFamily="@font/oswald_reg"
+            android:textSize="18sp"
+            android:layout_marginTop="30dp"
+            app:backgroundTint="@color/dark_green"
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input17_layout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.about.AboutActivity"
+    android:fillViewport="true"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/view_dg"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@color/dark_green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toStartOf="@+id/view_dg"
+            app:layout_constraintTop_toTopOf="@+id/view_dg"
+            app:layout_constraintBottom_toBottomOf="@id/view_dg"/>
+
+        <TextView
+            android:id="@+id/text_team"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_team"
+            android:textSize="22sp"
+            android:fontFamily="@font/oswald_med"
+            android:textColor="@color/black"
+            android:layout_marginTop="80dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_dg"/>
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_team">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/team_code"
+                android:textSize="18sp"
+                android:fontFamily="@font/oswald_reg"
+                android:textColor="@color/dark_green"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/team_janah"
+                android:textSize="15sp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/oswald_reg"
+                android:textColor="@color/dark_green"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/team_yuma"
+                android:textSize="15sp"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/oswald_reg"
+                android:textColor="@color/dark_green"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/team_desti"
+                android:textSize="15sp"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/oswald_reg"
+                android:textColor="@color/dark_green"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/team_angga"
+                android:textSize="15sp"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/oswald_reg"
+                android:textColor="@color/dark_green"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/team_rozin"
+                android:textSize="15sp"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/oswald_reg"
+                android:textColor="@color/dark_green"
+                android:textAlignment="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/team_dian"
+                android:textSize="15sp"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/oswald_reg"
+                android:textColor="@color/dark_green"
+                android:textAlignment="center" />
+
+
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

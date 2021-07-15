@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.setup_location.LocationSetupActivity"
+    android:background="@color/dark_green"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="50dp">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/logo"
+            android:layout_marginTop="70dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/set_prov"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/pilih_provinsi"
+            android:textSize="18sp"
+            android:fontFamily="@font/oswald_med"
+            android:textColor="@color/light_green"
+            android:layout_marginTop="40dp"
+            android:layout_marginHorizontal="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/logo"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/set_prov">
+
+            <Spinner
+                android:id="@+id/spinner_prov"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:popupBackground="@color/white"
+                android:padding="5dp"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/text_prov"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_prov"
+            android:textSize="15sp"
+            android:fontFamily="@font/robc_reg"
+            android:textColor="@color/black"
+            android:layout_marginHorizontal="20dp"
+            android:translationZ="5dp"
+            android:layout_marginStart="15dp"
+            app:layout_constraintStart_toStartOf="@id/card1"
+            app:layout_constraintTop_toTopOf="@+id/card1"
+            app:layout_constraintBottom_toBottomOf="@+id/card1"/>
+
+        <TextView
+            android:id="@+id/set_kom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/pilih_komoditas"
+            android:textSize="18sp"
+            android:fontFamily="@font/oswald_med"
+            android:textColor="@color/light_green"
+            android:layout_marginTop="40dp"
+            android:layout_marginHorizontal="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card1"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/set_kom">
+
+            <Spinner
+                android:id="@+id/spinner_kab"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:popupBackground="@color/white"
+                android:padding="5dp"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/text_kom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_kom"
+            android:textSize="15sp"
+            android:fontFamily="@font/robc_reg"
+            android:textColor="@color/black"
+            android:layout_marginHorizontal="20dp"
+            android:translationZ="5dp"
+            android:layout_marginStart="15dp"
+            app:layout_constraintStart_toStartOf="@id/card2"
+            app:layout_constraintTop_toTopOf="@+id/card2"
+            app:layout_constraintBottom_toBottomOf="@+id/card2"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_free"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/oswald_reg"
+            android:text="@string/select_free"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:backgroundTint="@color/white"
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card2" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_premium"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:text="@string/select_premium"
+            android:textColor="@color/black"
+            android:fontFamily="@font/oswald_reg"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            app:backgroundTint="@color/light_green"
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_free" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_select"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:text="@string/select"
+            android:textColor="@color/black"
+            android:fontFamily="@font/oswald_reg"
+            android:textSize="18sp"
+            android:layout_marginTop="60dp"
+            app:backgroundTint="@color/light_green"
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card2"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

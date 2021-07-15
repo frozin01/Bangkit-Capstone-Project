@@ -1,0 +1,47 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.CapstoneProject" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/dark_green</item>
+        <item name="colorPrimaryVariant">@color/light_green</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/white</item>
+        <item name="colorSecondaryVariant">@color/grey</item>
+        <item name="colorOnSecondary">@color/black</item>
+    </style>
+
+    <style name="input_cap">
+        <item name="android:fontFamily">@font/oswald_reg</item>
+        <item name="android:textColor">@color/dark_green</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+
+    <style name="input_layout">
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:layout_marginEnd">80dp</item>
+        <item name="android:layout_marginTop">3dp</item>
+        <item name="boxBackgroundColor">@color/grey</item>
+        <item name="boxCornerRadiusBottomEnd">10dp</item>
+        <item name="boxCornerRadiusBottomStart">10dp</item>
+        <item name="boxCornerRadiusTopEnd">10dp</item>
+        <item name="boxCornerRadiusTopStart">10dp</item>
+    </style>
+
+    <style name="input">
+        <item name="android:inputType">numberDecimal</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/robc_reg</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="input_size">
+        <item name="android:fontFamily">@font/oswald_reg</item>
+        <item name="android:textColor">@color/dark_green</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_marginStart">5dp</item>
+    </style>
+</resources>

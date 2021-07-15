@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="80dp"
+    android:layout_height="80dp"
+    android:layout_marginHorizontal="5dp"
+    android:layout_marginVertical="5dp"
+    android:layout_gravity="center_horizontal"
+    app:cardBackgroundColor="@color/dark_green"
+    app:cardCornerRadius="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/month_year"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mei\n2021"
+            android:textSize="10sp"
+            android:fontFamily="@font/robc_light"
+            android:textColor="@color/light_green"
+            android:paddingStart="10dp"/>
+
+        <TextView
+            android:id="@+id/value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="28.96"
+            android:textSize="30sp"
+            android:fontFamily="@font/robc_light"
+            android:textColor="@color/white"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:id="@+id/value_size"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="C"
+            android:textSize="10sp"
+            android:fontFamily="@font/robc_light"
+            android:textColor="@color/light_green"
+            android:textAlignment="textEnd"
+            android:paddingEnd="10dp"/>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
